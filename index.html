@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileConverter Pro - Free Online File Converter & Compressor</title>
+    <meta name="description" content="Free online file converter and compressor. Convert images, compress PDFs, videos, and audio files. No registration required.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <i class="fas fa-exchange-alt"></i>
+                <span>FileConverter Pro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#image-converter">Image</a>
+                <a href="#pdf-tools">PDF</a>
+                <a href="#video-compressor">Video</a>
+                <a href="#audio-converter">Audio</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Free Online File Converter & Compressor</h1>
+        <p>Convert, compress, and optimize your files online. No registration needed!</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Free</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Formats</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">10M+</span>
+                <span class="stat-label">Users</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Tools Container -->
+    <main class="container">
+        <!-- Image Converter Section -->
+        <section id="image-converter" class="tool-section">
+            <div class="tool-header">
+                <i class="fas fa-image"></i>
+                <h2>Image Converter</h2>
+                <p>Convert images to PNG, JPEG, WebP, and more</p>
+            </div>
+            <div class="tool-content">
+                <div class="upload-area" id="image-upload-area">
+                    <input type="file" id="image-input" accept="image/*" multiple hidden>
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop images here or</p>
+                    <button class="btn-primary" onclick="document.getElementById('image-input').click()">
+                        Choose Files
+                    </button>
+                </div>
+                <div class="conversion-options">
+                    <label>Convert to:</label>
+                    <select id="image-format-select">
+                        <option value="image/png">PNG</option>
+                        <option value="image/jpeg">JPEG</option>
+                        <option value="image/webp">WebP</option>
+                        <option value="image/bmp">BMP</option>
+                        <option value="image/gif">GIF</option>
+                    </select>
+                    <div class="quality-control">
+                        <label>Quality: <span id="quality-value">80</span>%</label>
+                        <input type="range" id="image-quality" min="1" max="100" value="80">
+                    </div>
+                </div>
+                <div class="file-list" id="image-file-list"></div>
+                <button class="btn-convert" id="convert-images-btn" disabled>
+                    <i class="fas fa-sync-alt"></i> Convert Images
+                </button>
+            </div>
+        </section>
+
+        <!-- PDF Tools Section -->
+        <section id="pdf-tools" class="tool-section">
+            <div class="tool-header">
+                <i class="fas fa-file-pdf"></i>
+                <h2>PDF Tools</h2>
+                <p>Merge, split, and compress PDF files</p>
+            </div>
+            <div class="tool-content">
+                <div class="pdf-tabs">
+                    <button class="tab-btn active" data-tab="merge">Merge PDF</button>
+                    <button class="tab-btn" data-tab="compress">Compress PDF</button>
+                    <button class="tab-btn" data-tab="split">Split PDF</button>
+                </div>
+                
+                <div class="pdf-tab-content active" id="merge-tab">
+                    <div class="upload-area" id="pdf-merge-upload">
+                        <input type="file" id="pdf-merge-input" accept=".pdf" multiple hidden>
+                        <i class="fas fa-file-pdf"></i>
+                        <p>Select PDF files to merge</p>
+                        <button class="btn-primary" onclick="document.getElementById('pdf-merge-input').click()">
+                            Choose PDFs
+                        </button>
+                    </div>
+                    <div class="file-list" id="pdf-merge-list"></div>
+                    <button class="btn-convert" id="merge-pdf-btn" disabled>
+                        <i class="fas fa-object-group"></i> Merge PDFs
+                    </button>
+                </div>
+
+                <div class="pdf-tab-content" id="compress-tab">
+                    <div class="upload-area" id="pdf-compress-upload">
+                        <input type="file" id="pdf-compress-input" accept=".pdf" hidden>
+                        <i class="fas fa-compress"></i>
+                        <p>Select PDF to compress</p>
+                        <button class="btn-primary" onclick="document.getElementById('pdf-compress-input').click()">
+                            Choose PDF
+                        </button>
+                    </div>
+                    <div class="compression-level">
+                        <label>Compression Level:</label>
+                        <select id="compression-level">
+                            <option value="low">Low (Better Quality)</option>
+                            <option value="medium" selected>Medium (Recommended)</option>
+                            <option value="high">High (Smaller Size)</option>
+                        </select>
+                    </div>
+                    <button class="btn-convert" id="compress-pdf-btn" disabled>
+                        <i class="fas fa-compress-arrows-alt"></i> Compress PDF
+                    </button>
+                </div>
+
+                <div class="pdf-tab-content" id="split-tab">
+                    <div class="upload-area" id="pdf-split-upload">
+                        <input type="file" id="pdf-split-input" accept=".pdf" hidden>
+                        <i class="fas fa-cut"></i>
+                        <p>Select PDF to split</p>
+                        <button class="btn-primary" onclick="document.getElementById('pdf-split-input').click()">
+                            Choose PDF
+                        </button>
+                    </div>
+                    <button class="btn-convert" id="split-pdf-btn" disabled>
+                        <i class="fas fa-cut"></i> Split PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Compressor Section -->
+        <section id="video-compressor" class="tool-section">
+            <div class="tool-header">
+                <i class="fas fa-video"></i>
+                <h2>Video Compressor</h2>
+                <p>Compress video files while maintaining quality</p>
+            </div>
+            <div class="tool-content">
+                <div class="upload-area" id="video-upload-area">
+                    <input type="file" id="video-input" accept="video/*" hidden>
+                    <i class="fas fa-film"></i>
+                    <p>Select video to compress</p>
+                    <button class="btn-primary" onclick="document.getElementById('video-input').click()">
+                        Choose Video
+                    </button>
+                </div>
+                <div class="video-options">
+                    <div class="quality-control">
+                        <label>Target Size: <span id="video-quality-value">50</span>%</label>
+                        <input type="range" id="video-compression" min="10" max="90" value="50">
+                    </div>
+                </div>
+                <button class="btn-convert" id="compress-video-btn" disabled>
+                    <i class="fas fa-compress"></i> Compress Video
+                </button>
+                <div class="progress-bar" id="video-progress" style="display: none;">
+                    <div class="progress-fill" id="video-progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Converter Section -->
+        <section id="audio-converter" class="tool-section">
+            <div class="tool-header">
+                <i class="fas fa-music"></i>
+                <h2>Audio Converter</h2>
+                <p>Convert audio files to MP3, WAV, and more</p>
+            </div>
+            <div class="tool-content">
+                <div class="upload-area" id="audio-upload-area">
+                    <input type="file" id="audio-input" accept="audio/*" multiple hidden>
+                    <i class="fas fa-headphones"></i>
+                    <p>Select audio files to convert</p>
+                    <button class="btn-primary" onclick="document.getElementById('audio-input').click()">
+                        Choose Audio Files
+                    </button>
+                </div>
+                <div class="conversion-options">
+                    <label>Convert to:</label>
+                    <select id="audio-format-select">
+                        <option value="audio/mpeg">MP3</option>
+                        <option value="audio/wav">WAV</option>
+                        <option value="audio/ogg">OGG</option>
+                        <option value="audio/aac">AAC</option>
+                    </select>
+                    <div class="quality-control">
+                        <label>Bitrate: <span id="audio-quality-value">192</span>kbps</label>
+                        <input type="range" id="audio-bitrate" min="64" max="320" step="32" value="192">
+                    </div>
+                </div>
+                <div class="file-list" id="audio-file-list"></div>
+                <button class="btn-convert" id="convert-audio-btn" disabled>
+                    <i class="fas fa-sync-alt"></i> Convert Audio
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loading-modal">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <p>Processing... Please wait</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="modal-progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FileConverter Pro</h3>
+                <p>Free online file conversion tools</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#image-converter">Image Converter</a>
+                <a href="#pdf-tools">PDF Tools</a>
+                <a href="#video-compressor">Video Compressor</a>
+                <a href="#audio-converter">Audio Converter</a>
+            </div>
+            <div class="footer-section">
+                <h3>Features</h3>
+                <p>✓ No Registration</p>
+                <p>✓ Free to Use</p>
+                <p>✓ Fast Processing</p>
+                <p>✓ Secure & Private</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FileConverter Pro. All rights reserved.</p>
+            <p>&copy; CREATED BY AKBAR FIRMANSYAH</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ffmpeg.js/0.2.1/ffmpeg.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
