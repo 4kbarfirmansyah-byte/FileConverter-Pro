@@ -3,35 +3,35 @@
 
   <!-- Halaman Utama -->
   <url>
-    <loc>https://www.converter.quickvert.online/</loc>
+    <loc>https://converter.quickvert.online/</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Halaman Converter Video -->
   <url>
-    <loc>https://www.converter.quickvert.online/video-converter</loc>
+    <loc>https://converter.quickvert.online/video-converter</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>0.9</priority>
   </url>
 
   <!-- Halaman Converter Foto -->
   <url>
-    <loc>https://www.converter.quickvert.online/foto-converter</loc>
+    <loc>https://converter.quickvert.online/foto-converter</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>0.9</priority>
   </url>
 
   <!-- Halaman Converter Musik/MP3 -->
   <url>
-    <loc>https://www.converter.quickvert.online/musik-converter</loc>
+    <loc>https://converter.quickvert.online/musik-converter</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>0.9</priority>
   </url>
 
   <!-- Halaman Tentang Kami (About) -->
   <url>
-    <loc>https://www.converter.quickvert.online/tentang-kami</loc>
+    <loc>https://converter.quickvert.online/tentang-kami</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>0.5</priority>
   </url>
