@@ -1,1 +1,9 @@
+User-agent: *
+Allow: /
 
+# Blokir folder yang tidak perlu di-index (opsional)
+Disallow: /assets/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://www.namadomainkamu.com/sitemap.xml
